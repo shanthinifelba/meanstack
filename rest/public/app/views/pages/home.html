@@ -1,0 +1,53 @@
+<div class="jumbotron text-center" ng-if="!main.loggedIn">
+<div>
+		<h1> Welcome to the Sensors Dashboard!</h1>
+		<h2>Login to view your sensors!</h2>
+	</div>
+
+</div>
+
+
+<div class="row" ng-if="main.loggedIn">
+	
+	<div class="col-md-3">
+
+
+
+	</div>
+
+	<div class="col-md-4" ng-controller="SensorController as sense">
+			<div class="row">
+				<div class="panel panel-primary">
+				<div class="panel heading">Describe Your Sensor</div>
+				<div class="panel body">
+					<form ng-submit	= "sense.createSensor()">
+						<input class="form-control input-lg" type="text" name="sense" ng-model="sense.sensorData.content" placeholder="............" required>
+					</form>
+				</div>
+				</div>
+
+			<div class="panel panel-success">
+				<div class="panel-heading"> Your Sensors </div>
+			<div class="panel body" ng-repeat="each in sense.sensors">
+				<p>{{each.content}}</p>
+
+				</div>
+
+			</div>
+
+
+		</div>
+
+
+
+	</div>
+
+
+
+	<div class="col-md-3">
+
+
+
+	</div>
+
+</div>

@@ -1,0 +1,46 @@
+<div class="container" ng-controller="UserCreateController as signup">
+	<div class="row">
+		
+		<div class="col-sm-6 col-md-4 col-md-offset-4">
+
+		<h1> Sign Up</h1>
+		<h1>Learn by Doing</h1>
+    <p>Learning to code is not magic. It is as simply as opening your browser! See in real time the changes you make to HTMl, CSS, JavaScript, HAML, and more!</p>
+    <p>Learn: 
+      <span>HTML</span>
+      <span>CSS</span>
+      <span>JavaScript</span>
+    </p>
+			<form class="form-login" method="post" ng-submit="signup.signupUser">
+			Name:<input type="text" name="name" class="form-control" ng-model="signup.userData.name">	
+			Username:<input type="text" name="username" class="form-control" ng-model="signup.userData.username">
+			Password:<input type="password" name="password" class="form-control" ng-model="signup.userData.password">
+			<br/>
+			<button type = "submit" class="btn btn-primary">Sign Up</button>
+			</form> 
+		
+	
+
+		</div>
+	</div>
+</div>
+ 
+<!--  <div class="signup">
+     <form>
+       <input type='text' placeholder='First:'  />
+       <input type='text' placeholder='Last:'  />
+       <input type='text' placeholder='Email:'  />
+       <input type='text' placeholder='Phone:'  />
+       <input type='submit' placeholder='SUBMIT' />
+     </form>
+  </div>
+  <div class="whysign">
+    <h1>Learn by Doing</h1>
+    <p>Learning to code is not magic. It is as simply as opening your browser! See in real time the changes you make to HTMl, CSS, JavaScript, HAML, and more!</p>
+    <p>Learn: 
+      <span>HTML</span>
+      <span>CSS</span>
+      <span>JavaScript</span>
+    </p>
+  </div>
+</div> -->
