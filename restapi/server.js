@@ -2,7 +2,7 @@
 
 var express = require('express');
 var morgan = require('morgan');
-var bodrparser = require('body-parser');
+var bodyparser = require('body-parser');
 //var mongoose = require('mongoose');
 
 //creating a new instance of express
@@ -13,9 +13,9 @@ var io = require('socket.io')(http);
 
 // add middleware
 
-app.use(bodyParser.urlencoded({extended:true})); // this will only parse string if false
+app.use(bodyparser.urlencoded({extended:true})); // this will only parse string if false
 
-app.use(bodyParser.json());
+app.use(bodyparser.json());
 
 app.use(morgan('dev'));
 
@@ -29,7 +29,7 @@ app.use(express.static(__dirname + '/public'));
 
 //connect to the server
 
-http.listen(config.port, function(err){
+http.listen(4000, function(err){
 
  if(err){
 
