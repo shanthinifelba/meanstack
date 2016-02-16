@@ -1,0 +1,35 @@
+{
+
+  "name": "restapi",
+
+  "version": "1.0.0",
+
+  "description": "Rest Api based on Node JS(MEAN STACK)",
+
+  "main": "server.js",
+
+  "scripts": {
+
+    "test": "echo \"Error: no test specified\" && exit 1"
+
+  },
+
+  "author": "Shanthini Rajendran",
+
+  "license": "ISC",
+
+  "dependencies": {
+
+    
+
+    "body-parser": "^1.14.2",
+
+    "express": "^4.13.3",
+
+    "morgan": "^1.6.1",
+
+    "socket.io": "^1.4.4"
+
+  }
+
+}
