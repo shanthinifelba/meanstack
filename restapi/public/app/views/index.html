@@ -1,15 +1,37 @@
 <!DOCTYPE html>
 <html ng-app="restapi">
 <head> 
-<title>IOT Dashboard</title>
-<base href='/'>
+<title>IOT Dashboard LED Controller</title>
 
-
+<meta name="viewport" content="width=400px" />
+	
+	
+	<link rel="stylesheet" href="style.css">
+    <script src="socket.io/socket.io.js"></script>
       <script type="text/javascript" src="app/app.js"> </script>
-
+<base href='/'>
 </head>
 
-<body >
+<body>
+
+	<input type="range" id= "inputSlider" min="0" max="255" value="50" step="1" oninput="showValue(this.value)" />
+	
+	<br><br><span id="outputText">50</span>
+	
+	<script type="text/javascript">
+		var socket = io.connect();
+		
+		socket.on('led', function (data) {
+			document.getElementById("inputSlider").value = data.value;
+			document.getElementById("outputText").innerHTML = data.value;
+		});
+		
+		function showValue(newValue)
+		{
+			document.getElementById("outputText").innerHTML=newValue;
+			socket.emit('led', { value: newValue });
+		}
+	</script>
 
 
 

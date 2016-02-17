@@ -68,3 +68,29 @@ app.get('*', function(req,res){
  res.sendFile( __dirname + '/public/app/views/index.html');
 
 })
+var SerialPort = require("serialport").SerialPort
+ var serialPort = new SerialPort("/dev/tty-usbserial1", {
+   baudrate: 115200
+ });
+// var brightness = 0; //static variable to hold the current brightness
+// io.sockets.on('connection', function (socket) { //gets called whenever a client connects
+//     socket.emit('led', {value: brightness}); //send the new client the current brightness
+    
+//     socket.on('led', function (data) { //makes the socket react to 'led' packets by calling this function
+//         brightness = data.value;  //updates brightness from the data object
+//         var buf = new Buffer(1); //creates a new 1-byte buffer
+//         buf.writeUInt8(brightness, 0); //writes the pwm value to the buffer
+//         serialPort.write(buf); //transmits the buffer to the arduino
+
+//         io.sockets.emit('led', {value: brightness}); //sends the updated brightness to all connected clients
+//     });
+// });
+
+//list ports
+serialPort.list(function (err, ports) {
+  ports.forEach(function(port) {
+    console.log(port.comName);
+    console.log(port.pnpId);
+    console.log(port.manufacturer);
+  });
+});
